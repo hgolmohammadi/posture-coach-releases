@@ -25,7 +25,6 @@
 
 [توضیحات نسخه](https://github.com/hgolmohammadi/posture-coach-releases/releases/tag/v2.1.8) · [فایل بررسی SHA-256](https://github.com/hgolmohammadi/posture-coach-releases/releases/download/v2.1.8/SHA256SUMS.txt) · [گزارش مشکل](https://github.com/hgolmohammadi/posture-coach-releases/issues/new?template=bug_report.yml)
 
-> **توجه امنیتی:** نسخه فعلی امضای دیجیتال معتبر ناشر ندارد. برنامه را فقط از صفحه رسمی دانلود کنید و Windows Defender یا SmartScreen را غیرفعال نکنید.
 
 ---
 
