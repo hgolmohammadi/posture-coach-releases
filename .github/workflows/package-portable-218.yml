@@ -1,0 +1,64 @@
+name: Package official 2.1.8 Portable ZIP
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/package-portable-218.yml
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    if: github.repository == 'hgolmohammadi/posture-coach-releases'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Download published Windows EXE
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p payload
+          gh release download v2.1.8 --repo "$GITHUB_REPOSITORY"             --pattern 'PostureCoach-2.1.8-Windows-Portable.exe' --dir payload
+          echo '95d75cc97e1213a909b527926e69937c5b3c40c0c53b591159491d2c7a0fac23  payload/PostureCoach-2.1.8-Windows-Portable.exe' | sha256sum --check
+
+      - name: Prepare Farsi instructions
+        run: |
+          set -euo pipefail
+          cat > payload/README-FA.txt <<'EOF'
+          PostureCoach v2.1.8 - Windows x64 - Portable
+
+          راهنمای سریع:
+          ۱. فایل ZIP را استخراج کنید.
+          ۲. فایل PostureCoach-2.1.8-Windows-Portable.exe را اجرا کنید.
+          ۳. دوربین اختیاری است؛ در صورت استفاده، موقعیت مناسب را کالیبره کنید.
+          ۴. برای خروج کامل از دکمه «خروج» در برنامه استفاده کنید.
+
+          فایل اجرایی امضای دیجیتال معتبر ناشر ندارد. ممکن است Windows SmartScreen
+          درباره فایل کم‌دانلود یا ناشر ناشناس هشدار دهد. این ZIP روشی برای
+          غیرفعال‌کردن یا دورزدن هشدارهای امنیتی نیست. Windows Defender/SmartScreen
+          را غیرفعال نکنید؛ فایل را فقط از انتشار رسمی Github دریافت کنید.
+
+          https://github.com/hgolmohammadi/posture-coach-releases/releases/tag/v2.1.8
+
+          SHA256 فایل EXE:
+          95d75cc97e1213a909b527926e69937c5b3c40c0c53b591159491d2c7a0fac23
+          EOF
+
+      - name: Create ZIP and verify identical EXE
+        run: |
+          set -euo pipefail
+          ZIP_NAME=PostureCoach-2.1.8-Windows-Portable.zip
+          zip -9 -j "$ZIP_NAME"             'payload/PostureCoach-2.1.8-Windows-Portable.exe'             'payload/README-FA.txt'
+          test "$(unzip -Z -1 "$ZIP_NAME" | wc -l)" -eq 2
+          unzip -p "$ZIP_NAME" 'PostureCoach-2.1.8-Windows-Portable.exe' | sha256sum | grep -qi '^95d75cc97e1213a909b527926e69937c5b3c40c0c53b591159491d2c7a0fac23'
+          sha256sum "$ZIP_NAME" > ZIP-SHA256.txt
+
+      - name: Attach ZIP and checksum to existing GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release upload v2.1.8             PostureCoach-2.1.8-Windows-Portable.zip ZIP-SHA256.txt             --repo "$GITHUB_REPOSITORY" --clobber
