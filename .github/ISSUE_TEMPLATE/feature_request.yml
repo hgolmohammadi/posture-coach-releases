@@ -1,0 +1,26 @@
+name: "💡 پیشنهاد قابلیت"
+description: "درخواست بهبود تجربه کاربری یا قابلیت جدید"
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: "لطفاً مسئله کاربر را توضیح بدهید؛ پیشنهادهایی که هدف و سناریوی استفاده روشنی دارند بهتر بررسی می‌شوند."
+  - type: textarea
+    id: problem
+    attributes:
+      label: "چه مشکلی را می‌خواهید حل کنید؟"
+      placeholder: "هنگام کار طولانی... "
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: "راه‌حل یا قابلیت پیشنهادی"
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "راه‌های جایگزین (اختیاری)"
+    validations:
+      required: false
