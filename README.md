@@ -13,7 +13,13 @@
 
 ## ⬇️ دانلود نسخه ویندوز
 
-### **[دانلود مستقیم PostureCoach 2.1.8 (Windows Portable)](https://github.com/hgolmohammadi/posture-coach-releases/releases/download/v2.1.8/PostureCoach-2.1.8-Windows-Portable.exe)**
+### **[📦 دریافت نسخه ZIP (همراه راهنمای فارسی)](https://github.com/hgolmohammadi/posture-coach-releases/releases/download/v2.1.8/PostureCoach-2.1.8-Windows-Portable.zip)**
+
+پس از دانلود، فایل ZIP را استخراج کنید و فایل اجرایی داخل آن را اجرا کنید.
+
+**[دانلود مستقیم EXE بدون فایل ZIP](https://github.com/hgolmohammadi/posture-coach-releases/releases/download/v2.1.8/PostureCoach-2.1.8-Windows-Portable.exe)** · **[بررسی SHA-256 بسته ZIP](https://github.com/hgolmohammadi/posture-coach-releases/releases/download/v2.1.8/ZIP-SHA256.txt)**
+
+> **مهم:** ZIP امضای دیجیتال ایجاد نمی‌کند و ممکن است Microsoft Edge یا SmartScreen هنگام دانلود، استخراج یا اجرای فایل همچنان هشدار دهد؛ هیچ تنظیم امنیتی ویندوز را برای اجرای برنامه غیرفعال نکنید.
 
 **نسخه:** 2.1.8 · **سیستم‌عامل:** Windows x64 · **نوع:** فایل EXE پرتابل · **حجم:** حدود ۱۲۵ مگابایت
 
