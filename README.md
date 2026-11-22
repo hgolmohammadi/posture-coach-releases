@@ -36,6 +36,38 @@
 | ⏰ **کار و استراحت** | تایمر پومودورو، وقفه‌ها، سوابق فعالیت و روتین‌های کوتاه |
 | 🔒 **حریم خصوصی** | پردازش تصویر روی دستگاه و فعال‌سازی اختیاری دوربین |
 
+## 📸 تصاویر واقعی برنامه
+
+تصاویر زیر از محیط فارسی PostureCoach گرفته شده‌اند. برای مشاهده اندازه اصلی، روی تصویر کلیک کنید.
+
+### داشبورد اصلی و آواتار دسکتاپ
+
+<p align="center">
+  <a href="docs/images/home-overview.jpg"><img src="docs/images/home-overview.jpg" alt="داشبورد اصلی نرم‌افزار PostureCoach نسخه 2.1.8" width="1000"></a>
+</p>
+
+### آشنایی با بخش‌های برنامه
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <a href="docs/images/settings-page.jpg"><img src="docs/images/settings-page.jpg" alt="صفحه تنظیمات PostureCoach" width="460"></a>
+      <p><strong>تنظیمات و یادآورها</strong></p>
+    </td>
+    <td align="center" width="50%">
+      <a href="docs/images/reports-page.jpg"><img src="docs/images/reports-page.jpg" alt="گزارش‌های فعالیت و روند ارگونومی" width="460"></a>
+      <p><strong>گزارش‌ها و روند فعالیت</strong></p>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <a href="docs/images/exercises-page.jpg"><img src="docs/images/exercises-page.jpg" alt="کتابخانه حرکات و تمرین‌ها" width="820"></a>
+</p>
+<p align="center"><strong>کتابخانه ۱۰ تمرین آموزشی</strong></p>
+
+---
+
 ## شروع سریع
 
 ۱. فایل EXE را از لینک رسمی بالا دریافت و ذخیره کنید.
