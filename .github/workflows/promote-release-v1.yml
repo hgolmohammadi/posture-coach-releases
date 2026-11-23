@@ -1,0 +1,72 @@
+name: Point landing page to PostureCoach v1.0.0 after publishing
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    if: github.repository == 'hgolmohammadi/posture-coach-releases' && github.event.release.tag_name == 'v1.0.0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Verify three uploaded binary/checksum assets and update landing
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json, re, subprocess
+          from pathlib import Path
+
+          repo = 'hgolmohammadi/posture-coach-releases'
+          release = json.loads(subprocess.check_output(
+              ['gh', 'api', f'repos/{repo}/releases/tags/v1.0.0'], text=True
+          ))
+          names = [
+              'PostureCoach-1.0.0-Windows-Portable.exe',
+              'PostureCoach-1.0.0-Windows-Portable.zip',
+              'SHA256SUMS.txt',
+          ]
+          assets = {a['name']:a for a in release['assets']}
+          for name in names:
+              assert name in assets and assets[name]['state'] == 'uploaded', f'Missing {name}'
+              assert (assets[name].get('digest') or '').startswith('sha256:'), f'Missing checksum for {name}'
+
+          exe_sha = assets[names[0]]['digest'].split(':', 1)[1].upper()
+          readme = Path('README.md')
+          s = readme.read_text(encoding='utf-8')
+          assert 'PostureCoach-2.1.8-Windows-Portable.zip' in s
+          old_sha = '95D75CC97E1213A909B527926E69937C5B3C40C0C53B591159491D2C7A0FAC23'
+          assert old_sha in s
+          s = s.replace('/releases/download/v2.1.8/', '/releases/download/v1.0.0/')
+          s = s.replace('PostureCoach-2.1.8-Windows-Portable.', 'PostureCoach-1.0.0-Windows-Portable.')
+          s = s.replace('ZIP-SHA256.txt', 'SHA256SUMS.txt')
+          s = s.replace('/releases/tag/v2.1.8', '/releases/tag/v1.0.0')
+          s = s.replace('<strong>نسخه:</strong> 2.1.8', '<strong>نسخه:</strong> 1.0.0')
+          s = s.replace('نسخه 2.1.8', 'نسخه 1.0.0')
+          s = s.replace(old_sha, exe_sha)
+          s = s.replace(
+              'https://img.shields.io/github/v/release/hgolmohammadi/posture-coach-releases?label=Latest%20Release&amp;color=6D28D9',
+              'https://img.shields.io/badge/Latest_Release-v1.0.0-6D28D9'
+          )
+          s = re.sub(r'\n<blockquote[^>]*>.*?</blockquote>\n', '\n', s, count=1, flags=re.S)
+          assert 'PostureCoach-1.0.0-Windows-Portable.zip' in s
+          assert 'PostureCoach-1.0.0-Windows-Portable.exe' in s
+          assert 'PostureCoach-2.1.8-Windows-Portable.zip' not in s
+          readme.write_text(s, encoding='utf-8')
+          PY
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git config user.name 'github-actions[bot]'
+          git add README.md
+          if git diff --cached --quiet; then
+            echo 'README already up to date'
+          else
+            git commit -m 'docs: promote verified PostureCoach 1.0.0 release to landing page'
+            git push origin main
+          fi
