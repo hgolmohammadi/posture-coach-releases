@@ -30,7 +30,7 @@
 
 <p dir="rtl" align="right">کار طولانی پشت رایانه باعث می‌شود استراحت‌کردن و توجه به وضعیت بدن را فراموش کنیم. PostureCoach با یادآوری‌های قابل تنظیم، تمرین‌های تصویری و <strong>بررسی تخمینی تغییر وضعیت سر و شانه نسبت به حالت کالیبره‌شده</strong> به مدیریت عادت‌های کاری کمک می‌کند.</p>
 
-<table dir="rtl" align="right">
+<table dir="rtl" width="100%">
 <thead><tr><th align="right" dir="rtl">قابلیت</th><th align="right" dir="rtl">کاربرد</th></tr></thead>
 <tbody>
 <tr><td align="right" dir="rtl">📷 <strong>پایش سر و شانه</strong></td><td align="right" dir="rtl">تحلیل محلی تصویر وب‌کم، کالیبراسیون و هشدار تغییر وضعیت نسبت به مرجع</td></tr>
@@ -48,7 +48,7 @@
 
 <h3 dir="rtl" align="right">داشبورد اصلی و آواتار دسکتاپ</h3>
 
-<p align="center"><a href="docs/images/home-overview.jpg"><img src="docs/images/home-overview.jpg" alt="داشبورد اصلی نرم‌افزار PostureCoach نسخه 1.0.0" width="1000"></a></p>
+<p align="center"><a href="docs/images/home-overview.jpg"><img src="docs/images/home-overview.jpg" alt="داشبورد اصلی نرم‌افزار PostureCoach" width="1000"></a></p>
 
 <h3 dir="rtl" align="right">آشنایی با بخش‌های برنامه</h3>
 
