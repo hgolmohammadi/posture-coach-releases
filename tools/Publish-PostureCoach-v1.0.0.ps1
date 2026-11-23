@@ -84,8 +84,7 @@ Compress-Archive -LiteralPath @($publishedExe,$readmeFile) -DestinationPath $tmp
 $checkZip = [System.IO.Compression.ZipFile]::OpenRead($tmpZip)
 try {
   $names = @($checkZip.Entries | ForEach-Object { $_.Name } | Sort-Object)
-  $expectedNames = @($exeName,'README-FA.txt' | Sort-Object)
-  if ($names.Count -ne 2 -or $names[0] -ne $expectedNames[0] -or $names[1] -ne $expectedNames[1]) {
+  if ($names.Count -ne 2 -or -not ($names -contains $exeName) -or -not ($names -contains 'README-FA.txt')) {
     throw 'Public ZIP does not have the two expected files.'
   }
 } finally {
