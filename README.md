@@ -5,7 +5,7 @@
 <p dir="rtl" align="right"><strong>نرم‌افزار رایگان فارسی برای آگاهی از وضعیت نشستن، مراقبت از چشم و مدیریت استراحت هنگام کار با رایانه</strong></p>
 
 <p align="center" dir="ltr">
-  <a href="https://github.com/hgolmohammadi/posture-coach-releases/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/hgolmohammadi/posture-coach-releases?label=Latest%20Release&amp;color=6D28D9"></a>
+  <a href="https://github.com/hgolmohammadi/posture-coach-releases/releases/latest"><img alt="Latest release" src="https://img.shields.io/badge/Latest_Release-v1.0.0-6D28D9"></a>
   <img alt="Windows x64" src="https://img.shields.io/badge/Windows-x64-2563EB">
   <img alt="Portable EXE" src="https://img.shields.io/badge/Portable-EXE-0F766E">
   <img alt="Free to use" src="https://img.shields.io/badge/Usage-Free-16A34A">
@@ -13,17 +13,16 @@
 
 <h2 dir="rtl" align="right">⬇️ دانلود نسخه ویندوز</h2>
 
-<h3 dir="rtl" align="right"><a href="https://github.com/hgolmohammadi/posture-coach-releases/releases/download/v2.1.8/PostureCoach-2.1.8-Windows-Portable.zip">📦 دریافت نسخه ZIP (همراه راهنمای فارسی)</a></h3>
+<h3 dir="rtl" align="right"><a href="https://github.com/hgolmohammadi/posture-coach-releases/releases/download/v1.0.0/PostureCoach-1.0.0-Windows-Portable.zip">📦 دریافت نسخه ZIP (همراه راهنمای فارسی)</a></h3>
 
 <p dir="rtl" align="right">پس از دانلود، فایل ZIP را استخراج کنید و فایل اجرایی داخل آن را اجرا کنید.</p>
 
-<p dir="rtl" align="right"><strong><a href="https://github.com/hgolmohammadi/posture-coach-releases/releases/download/v2.1.8/PostureCoach-2.1.8-Windows-Portable.exe">دانلود مستقیم EXE بدون فایل ZIP</a></strong> · <strong><a href="https://github.com/hgolmohammadi/posture-coach-releases/releases/download/v2.1.8/ZIP-SHA256.txt">بررسی SHA-256 بسته ZIP</a></strong></p>
+<p dir="rtl" align="right"><strong><a href="https://github.com/hgolmohammadi/posture-coach-releases/releases/download/v1.0.0/PostureCoach-1.0.0-Windows-Portable.exe">دانلود مستقیم EXE بدون فایل ZIP</a></strong> · <strong><a href="https://github.com/hgolmohammadi/posture-coach-releases/releases/download/v1.0.0/SHA256SUMS.txt">بررسی SHA-256 بسته ZIP</a></strong></p>
 
-<blockquote dir="rtl" align="right"><p dir="rtl" align="right"><strong>مهم:</strong> ZIP امضای دیجیتال ایجاد نمی‌کند و ممکن است Microsoft Edge یا SmartScreen هنگام دانلود، استخراج یا اجرای فایل همچنان هشدار دهد؛ هیچ تنظیم امنیتی ویندوز را برای اجرای برنامه غیرفعال نکنید.</p></blockquote>
 
-<p dir="rtl" align="right"><strong>نسخه:</strong> 2.1.8 · <strong>سیستم‌عامل:</strong> Windows x64 · <strong>نوع:</strong> فایل EXE پرتابل · <strong>حجم:</strong> حدود ۱۲۵ مگابایت</p>
+<p dir="rtl" align="right"><strong>نسخه:</strong> 1.0.0 · <strong>سیستم‌عامل:</strong> Windows x64 · <strong>نوع:</strong> فایل EXE پرتابل · <strong>حجم:</strong> حدود ۱۲۵ مگابایت</p>
 
-<p dir="rtl" align="right"><a href="https://github.com/hgolmohammadi/posture-coach-releases/releases/tag/v2.1.8">توضیحات نسخه</a> · <a href="https://github.com/hgolmohammadi/posture-coach-releases/releases/download/v2.1.8/SHA256SUMS.txt">فایل بررسی SHA-256</a> · <a href="https://github.com/hgolmohammadi/posture-coach-releases/issues/new?template=bug_report.yml">گزارش مشکل</a></p>
+<p dir="rtl" align="right"><a href="https://github.com/hgolmohammadi/posture-coach-releases/releases/tag/v1.0.0">توضیحات نسخه</a> · <a href="https://github.com/hgolmohammadi/posture-coach-releases/releases/download/v1.0.0/SHA256SUMS.txt">فایل بررسی SHA-256</a> · <a href="https://github.com/hgolmohammadi/posture-coach-releases/issues/new?template=bug_report.yml">گزارش مشکل</a></p>
 
 <hr>
 
@@ -49,7 +48,7 @@
 
 <h3 dir="rtl" align="right">داشبورد اصلی و آواتار دسکتاپ</h3>
 
-<p align="center"><a href="docs/images/home-overview.jpg"><img src="docs/images/home-overview.jpg" alt="داشبورد اصلی نرم‌افزار PostureCoach نسخه 2.1.8" width="1000"></a></p>
+<p align="center"><a href="docs/images/home-overview.jpg"><img src="docs/images/home-overview.jpg" alt="داشبورد اصلی نرم‌افزار PostureCoach نسخه 1.0.0" width="1000"></a></p>
 
 <h3 dir="rtl" align="right">آشنایی با بخش‌های برنامه</h3>
 
@@ -92,11 +91,11 @@
 
 <p dir="rtl" align="right">در PowerShell در پوشه دانلود فایل اجرا کنید:</p>
 
-<pre dir="ltr" align="left"><code>Get-FileHash .\PostureCoach-2.1.8-Windows-Portable.exe -Algorithm SHA256</code></pre>
+<pre dir="ltr" align="left"><code>Get-FileHash .\PostureCoach-1.0.0-Windows-Portable.exe -Algorithm SHA256</code></pre>
 
 <p dir="rtl" align="right">هش رسمی نسخه:</p>
 
-<pre dir="ltr" align="left"><code>95D75CC97E1213A909B527926E69937C5B3C40C0C53B591159491D2C7A0FAC23</code></pre>
+<pre dir="ltr" align="left"><code>C289F5736815DAB5E8C815508FFF09F16D5044B73574A45C68730F2351586406</code></pre>
 
 <p dir="rtl" align="right">تطابق هش، یکسان‌بودن فایل با نسخه منتشرشده را بررسی می‌کند؛ به‌تنهایی تضمین‌کننده ایمنی نیست.</p>
 
