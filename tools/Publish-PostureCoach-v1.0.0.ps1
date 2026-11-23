@@ -116,10 +116,12 @@ if ($LASTEXITCODE -ne 0) {
   if ($LASTEXITCODE -ne 0) { throw 'GITHUB_AUTH_FAILED' }
 }
 
-$viewText = & gh release view $tag --repo $repository --json isDraft,assets
+$releaseId = 455344417  # Verified draft created on 2026-11-23
+$viewText = & gh api "repos/$repository/releases/$releaseId"
 if ($LASTEXITCODE -ne 0) { throw 'GITHUB_DRAFT_NOT_FOUND: Release should exist before upload.' }
 $view = ($viewText -join [Environment]::NewLine) | ConvertFrom-Json
-if (-not $view.isDraft) { throw 'Release v1.0.0 is no longer draft. Stop to prevent accidental overwrites.' }
+if ($view.tag_name -ne $tag) { throw 'Unexpected release identity. Publishing stopped.' }
+if (-not $view.draft) { throw 'Release v1.0.0 is no longer draft. Stop to prevent accidental overwrites.' }
 
 $paths = @($publishedExe,$publishedZip,$checksumFile)
 $shaMap = @{
@@ -128,7 +130,7 @@ $shaMap = @{
   'SHA256SUMS.txt' = (Get-FileHash -LiteralPath $checksumFile -Algorithm SHA256).Hash.ToLowerInvariant()
 }
 function Get-RemoteAssets {
-  $response = & gh api "repos/$repository/releases/tags/$tag"
+  $response = & gh api "repos/$repository/releases/$releaseId"
   if ($LASTEXITCODE -ne 0) { throw 'Failed to read GitHub release assets.' }
   return (($response -join [Environment]::NewLine) | ConvertFrom-Json).assets
 }
