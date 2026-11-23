@@ -1,0 +1,28 @@
+name: Stage PostureCoach v1.0.0 release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/stage-release-v1.yml
+
+permissions:
+  contents: write
+
+jobs:
+  draft-release:
+    if: github.repository == 'hgolmohammadi/posture-coach-releases'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create v1.0.0 draft (no binaries, not yet public)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view v1.0.0 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo 'Release v1.0.0 already exists; leaving it untouched'
+          else
+            gh release create v1.0.0               --repo "$GITHUB_REPOSITORY"               --target main               --draft               --title 'PostureCoach v1.0.0 — Windows Portable | اولین نسخه رسمی'               --notes-file docs/releases/v1.0.0-rtl.html
+          fi
